@@ -10,8 +10,8 @@ public class App {
         Market market = new Market();
         iActorBehaviour client1 = new OrdinaryClient("Boris");
         iActorBehaviour client2 = new OrdinaryClient("Dasha");
-        iActorBehaviour client3 = new SpecialClient("Prezident", 1);
-        iActorBehaviour client4 = new PromoClient("Vall", 12);
+        iActorBehaviour client3 = new SpecialClient("Prezident"+" статуса: VIP", 1);
+        iActorBehaviour client4 = new PromoClient("Vall"+ " участвующий в акции", 12);
 
         market.acceptToMarket(client1);
         market.acceptToMarket(client2);
