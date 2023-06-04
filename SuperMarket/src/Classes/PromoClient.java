@@ -1,14 +1,30 @@
+/**
+ * Класс PromoClient:
+ * 1. клиент участ в акции
+ * 2. Наследник Класса Actor
+ */
 package Classes;
 
 public class PromoClient extends Actor {
 
     private int idProm;
 
+    /**
+     * Базовый конструктор
+     * 
+     * @param name   имя
+     * @param idProm номер участника акции
+     */
     public PromoClient(String name, int idProm) {
         super(name);
         this.idProm = idProm;
     }
 
+    /**
+     * метод для получение номера
+     * 
+     * @return номер
+     */
     public int getIdProm() {
         return idProm;
     }

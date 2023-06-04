@@ -1,3 +1,6 @@
+/**
+ * интерфейс определяет поведение клиента
+ */
 package Interfaces;
 
 import Classes.Actor;

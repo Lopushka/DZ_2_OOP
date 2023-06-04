@@ -1,3 +1,8 @@
+/**
+ * Класс OrdinaryClient:
+ * 1. обычный клиент
+ * 2. Наследник Класса Actor
+ */
 package Classes;
 
 public class OrdinaryClient extends Actor {

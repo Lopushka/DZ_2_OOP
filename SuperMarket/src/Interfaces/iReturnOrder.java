@@ -1,3 +1,6 @@
+/**
+ * Интерфейс iReturnOrder  поведение клиентов при возврате товаров.
+ */
 package Interfaces;
 
 import Classes.Actor;

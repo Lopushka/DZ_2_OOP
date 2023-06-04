@@ -1,3 +1,7 @@
+/** 
+ * Класс Market:
+ * реализующую интерфейсы iMarketBehaviour и iQueueBehaviour.
+ */
 package Classes;
 
 import java.util.List;
@@ -8,25 +12,31 @@ import Interfaces.iMarketBehaviour;
 import Interfaces.iQueueBehaviour;
 
 public class Market implements iMarketBehaviour, iQueueBehaviour {
-
+    /**
+     * список покупателей
+     */
     private List<iActorBehaviour> queue;
 
+    /** конструктор */
     public Market() {
         this.queue = new ArrayList<iActorBehaviour>();
     }
 
+    /** переопределение метода: клиент пришел в магазин */
     @Override
     public void acceptToMarket(iActorBehaviour actor) {
         System.out.println(actor.getActor().getName() + " клиент пришел в магазин ");
         takeInQueue(actor);
     }
 
+    /** переопределение метода: клиент добавлен в очередь */
     @Override
     public void takeInQueue(iActorBehaviour actor) {
         this.queue.add(actor);
         System.out.println(actor.getActor().getName() + " клиент добавлен в очередь ");
     }
 
+    /** переопределение метода: клиент ушел из магазин */
     @Override
     public void releaseFromMarket(List<Actor> actors) {
         for (Actor actor : actors) {
@@ -36,6 +46,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
 
     }
 
+    /** переопределение метода: обновление данных. */
     @Override
     public void update() {
         takeOrder();
@@ -43,6 +54,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         releaseFromQueue();
     }
 
+    /** переопределение метода: клиент получил свой заказ */
     @Override
     public void giveOrder() {
         for (iActorBehaviour actor : queue) {
@@ -54,6 +66,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
 
     }
 
+    /** переопределение метода: клиент ушел из очереди */
     @Override
     public void releaseFromQueue() {
         List<Actor> releaseActors = new ArrayList<>();
@@ -67,6 +80,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         releaseFromMarket(releaseActors);
     }
 
+    /** переопределение метода: клиент сделал заказ */
     @Override
     public void takeOrder() {
         for (iActorBehaviour actor : queue) {

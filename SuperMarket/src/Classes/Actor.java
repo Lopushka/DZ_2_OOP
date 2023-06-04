@@ -14,15 +14,18 @@ import Interfaces.iReturnOrder;
 public abstract class Actor implements iActorBehaviour,iReturnOrder {
     
     protected String name; 
-   
+   /** выполнение заказа */
     protected boolean isTakeOrder;
+    /** получение заказа */
     protected boolean isMakeOrder;
-    /** Оплта */
+    /** оплата */
     protected boolean isCash;
-    /** Возврат */
+    /** Возврат товара */
     protected boolean isRetornOrder;
 
-    /** конструктор */
+    /** конструктор
+     * @param name имя
+     */
     public Actor(String name) {
         this.name = name;
     }
